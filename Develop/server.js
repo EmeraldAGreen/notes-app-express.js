@@ -3,7 +3,7 @@ const path = require('path');
 const { clog } = require('./middleware/clog');
 const api = require('./routes/index.js');
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.port || 5500;
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.get('/', (req, res) =>
 
 // HTML ROUTE: `GET /notes` should return the `notes.html` file.
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+  res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
 app.listen(PORT, () =>
