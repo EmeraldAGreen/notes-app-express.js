@@ -1,19 +1,20 @@
 const express = require('express');
 const path = require('path');
-const { clog } = require('./middleware/clog');
-const api = require('./routes/index.js');
+// const { clog } = require('./middleware/clog');
+// const api = require('./routes/index.js');
 
-const PORT = process.env.port || 5500;
+const PORT = process.env.port || 3001;
 
 const app = express();
 
 // Middleware for parsing JSON and urlencoded form data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
-app.use(clog)
-app.use('/api', api);
+// app.use(clog)
+// app.use('/api', api);
 
+// deliver everything in the public directory as static content
 app.use(express.static('public'));
 
 // HTML ROUTE: `GET *` should return the `index.html` file.
@@ -23,7 +24,7 @@ app.get('/', (req, res) =>
 
 // HTML ROUTE: `GET /notes` should return the `notes.html` file.
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, './public/notes.html'))
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 app.listen(PORT, () =>
