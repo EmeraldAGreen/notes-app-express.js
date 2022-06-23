@@ -4,7 +4,10 @@
 # Note Taker App
 
 ## Description
-In this assignment, we created the back end to a note taker application. The application can be used to write and save notes. There is a delete function. You just have to refresh the page when you delete something. 
+The application can be used to write and save notes. The user can also delete notes. Refresh the page once a note has been deleted.
+
+## Deployed Link
+[Notes App](https://note-taker-app001.herokuapp.com/)
 
 ## Table of Contents
 * [Installation](#installation)
